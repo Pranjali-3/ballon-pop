@@ -58,7 +58,8 @@ public class AdsManager : MonoBehaviour {
 
 	public void ShowInterstitial()
 	{
-		ShowAdMob();
+		if (interstitialAdMob != null)
+			ShowAdMob();
 	}
 
     public void IsVideoRewardAvailable()
@@ -118,6 +119,9 @@ public class AdsManager : MonoBehaviour {
 
 	public void ShowAdMob()
 	{
+		if(interstitialAdMob == null)
+			return;
+
 		if(interstitialAdMob.IsLoaded())
 		{
 			interstitialAdMob.Show();

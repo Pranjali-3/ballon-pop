@@ -120,41 +120,47 @@ public class SoundManager : MonoBehaviour {
 
 	public static void PlaySound(string soundName)
 	{
-		if (soundOn == 1)
+		if (soundOn == 1 && Instance != null)
 		{
 			switch(soundName)
 			{
 				case "Music":
-					Instance.menuMusic.Play();
+					PlayAudioSource(Instance.menuMusic);
 					break;
 				case "ButtonClick":
-					Instance.buttonClick.Play();
+					PlayAudioSource(Instance.buttonClick);
 					break;
 				case "PopupArrive":
-					Instance.popupArrive.Play();
+					PlayAudioSource(Instance.popupArrive);
 					break;
 				case "BombSound":
-					Instance.bombSound.Play();
+					PlayAudioSource(Instance.bombSound);
 					break;
 				case "InappBought":
-					Instance.inappBought.Play();
+					PlayAudioSource(Instance.inappBought);
 					break;
 				case "MinusSec":
-					Instance.minusSec.Play();
+					PlayAudioSource(Instance.minusSec);
 					break;
 				case "PlusSec":
-					Instance.plusSec.Play();
+					PlayAudioSource(Instance.plusSec);
 					break;
 				case "BaloonPop":
-					Instance.baloonPop.Play();
+					PlayAudioSource(Instance.baloonPop);
 					break;
 				case "ToyPop":
-					Instance.toyPop.Play();
+					PlayAudioSource(Instance.toyPop);
 					break;
 				default:
 					break;
 			}
 		}
+	}
+
+	static void PlayAudioSource(AudioSource audioSource)
+	{
+		if (audioSource != null)
+			audioSource.Play();
 	}
 
 	public static void StopSound(string soundName)

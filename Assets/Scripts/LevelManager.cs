@@ -108,6 +108,9 @@ public class LevelManager : MonoBehaviour {
 
 	public void ScorePoint(int points)
 	{
+		if (gameOver)
+			return;
+
 		int pointsToAdd = points * pointsMultiplier;
 		pointsToAdd = ComboManager.RegisterPop(pointsToAdd);
 		pointsScored += pointsToAdd;
@@ -250,9 +253,6 @@ public class LevelManager : MonoBehaviour {
 
 		levelManager = this;
 
-		if (ProgressionMapManager.Instance != null)
-			ProgressionMapManager.Instance.ApplySelectedLevel();
-
 		if (ThemeProgressionManager.Instance != null)
 			ThemeProgressionManager.Instance.ApplySelectedTheme();
 
@@ -285,7 +285,7 @@ public class LevelManager : MonoBehaviour {
 
 	void Start()
 	{
-		 StartCoroutine("SpawnBaloon");
+		StartCoroutine("SpawnBaloon");
 	}
 
 	public void RestartGame()
@@ -356,7 +356,7 @@ public class LevelManager : MonoBehaviour {
 //		if (gamePaused)
 		Time.timeScale = 1f;
 
-		if (!GlobalVariables.removeAdsOwned)
+		if (!GlobalVariables.removeAdsOwned && AdsManager.Instance != null)
 			AdsManager.Instance.ShowInterstitial();
 
 		Application.LoadLevel("MainScene");

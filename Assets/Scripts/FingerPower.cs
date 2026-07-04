@@ -658,7 +658,9 @@ public class FingerPower : MonoBehaviour {
 		if (boss == null)
 			return false;
 
-		SoundManager.PlaySound("BaloonPop");
+		if (SoundManager.Instance != null)
+			SoundManager.PlaySound("BaloonPop");
+
 		boss.Hit();
 		return true;
 	}
@@ -680,7 +682,7 @@ public class FingerPower : MonoBehaviour {
 	{
 
 #if UNITY_EDITOR
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !LevelManager.gamePaused && !LevelManager.gameOver && EventSystem.current.currentSelectedGameObject == null)
             Click(Input.mousePosition);
 #endif
 

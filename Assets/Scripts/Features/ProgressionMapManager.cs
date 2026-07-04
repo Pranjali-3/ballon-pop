@@ -26,7 +26,6 @@ public class ProgressionMapManager : MonoBehaviour
 	{
 		Instance = this;
 		EnsureDefaultLevels();
-		ApplySelectedLevel();
 		UpdateSelectedLevelText();
 	}
 
