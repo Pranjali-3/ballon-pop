@@ -1,0 +1,550 @@
+fileFormatVersion: 2
+guid: 2db0325db6c92c9429a2ee07b3faf3df
+timeCreated: 1485163352
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PopupBody
+    21300002: PopupHeader
+    21300004: PopupHeaderSidePart
+    21300006: PopupHeaderShadow
+    21300008: Button
+    21300010: ContentBGSmall
+    21300012: ContentBGBig
+    21300014: StarBg
+    21300016: Star
+    21300018: ButtonCircle
+    21300020: IconHome
+    21300022: IconRestart
+    21300024: IconPlay
+    21300026: IconSettings
+    21300028: PopupExitButton
+    21300030: PopupBodySmall
+    21300032: NextIcon
+    21300034: Day1
+    21300036: Day2
+    21300038: Day3
+    21300040: Day4
+    21300042: Day5
+    21300044: Day6
+    21300046: BackGlow
+    21300048: UITexture_0
+    21300050: UITexture_1
+    21300052: UITexture_2
+    21300054: UITexture_3
+    21300056: UITexture_28
+    21300058: UITexture_29
+    21300060: UITexture_30
+    21300062: UITexture_31
+    21300064: UITexture_32
+    21300066: UITexture_33
+    21300068: UITexture_34
+    21300070: UITexture_35
+    21300072: UITexture_36
+    21300074: UITexture_37
+    21300076: UITexture_38
+    21300078: UITexture_39
+    21300080: UITexture_40
+    21300082: UITexture_41
+    21300084: UITexture_42
+    21300086: UITexture_43
+    21300088: PowerUpsPart
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PopupBody
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 524
+        width: 502
+        height: 499
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 83, y: 82, z: 82, w: 84}
+    - name: PopupHeader
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 423
+        width: 553
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PopupHeaderSidePart
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 225
+        width: 80
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PopupHeaderShadow
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 972
+        width: 508
+        height: 49
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 327
+        width: 154
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 36, y: 35, z: 38, w: 34}
+    - name: ContentBGSmall
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 129
+        width: 311
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 35, y: 32, z: 38, w: 32}
+    - name: ContentBGBig
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 311
+        height: 123
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 46, y: 44, z: 49, w: 44}
+    - name: StarBg
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 108
+        height: 106
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Star
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 110
+        width: 92
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonCircle
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 119
+        width: 172
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 34, y: 37, z: 36, w: 37}
+    - name: IconHome
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 326
+        width: 93
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IconRestart
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 328
+        width: 85
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IconPlay
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 330
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IconSettings
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 232
+        width: 91
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PopupExitButton
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 226
+        width: 90
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PopupBodySmall
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 863
+        width: 502
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NextIcon
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 241
+        width: 85
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Day1
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 2
+        width: 89
+        height: 114
+      alignment: 9
+      pivot: {x: .496975988, y: .404296547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Day2
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 2
+        width: 88
+        height: 113
+      alignment: 9
+      pivot: {x: .485216618, y: .404296547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Day3
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 2
+        width: 97
+        height: 122
+      alignment: 9
+      pivot: {x: .5, y: .391244978}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Day4
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 2
+        width: 97
+        height: 120
+      alignment: 9
+      pivot: {x: .510234535, y: .358500898}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Day5
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 3
+        width: 107
+        height: 139
+      alignment: 9
+      pivot: {x: .502334356, y: .40196231}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Day6
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 3
+        width: 86
+        height: 111
+      alignment: 9
+      pivot: {x: .497075677, y: .404107183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BackGlow
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 118
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_0
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 642
+        width: 74
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 671
+        width: 509
+        height: 105
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_2
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 533
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_3
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 324
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_28
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 320
+        width: 100
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_29
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 319
+        width: 101
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_30
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 125
+        width: 101
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_31
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 525
+        width: 112
+        height: 109
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_32
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 229
+        width: 83
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_33
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 132
+        width: 94
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_34
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 778
+        width: 84
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_35
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 776
+        width: 88
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_36
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 777
+        width: 97
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_37
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 777
+        width: 101
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_38
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 786
+        width: 93
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_39
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 588
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_40
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 590
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_41
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 321
+        width: 192
+        height: 177
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_42
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 499
+        width: 90
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UITexture_43
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 500
+        width: 89
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpsPart
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 287
+        width: 76
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

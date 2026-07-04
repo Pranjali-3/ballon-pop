@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: 5e1ca3c3d7cc726429f3aeb86c95b667
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Blouse_0
+    21300002: Blouse_1
+    21300004: Blouse_2
+    21300006: Blouse_3
+    21300008: Blouse_4
+    21300010: Blouse_5
+    21300012: Blouse_6
+    21300014: Blouse_7
+    21300016: Blouse_8
+    21300018: Blouse_9
+    21300020: Blouse_10
+    21300022: Blouse_11
+    21300024: Blouse_12
+    21300026: Blouse_13
+    21300028: Blouse_14
+    21300030: Blouse_15
+    21300032: Blouse_16
+    21300034: Blouse_17
+    21300036: Blouse_18
+    21300038: Blouse_19
+    21300040: Blouse_20
+    21300042: Blouse_21
+    21300044: Blouse_22
+    21300046: Blouse_23
+    21300048: Blouse_24
+    21300050: Blouse_25
+    21300052: Blouse_26
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Blouse_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1691
+        width: 524
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_1
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 1691
+        width: 524
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_2
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 1689
+        width: 524
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_3
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 1763
+        width: 340
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1313
+        width: 524
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_5
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1315
+        width: 524
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_6
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1315
+        width: 524
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_7
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 1487
+        width: 340
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 937
+        width: 524
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_9
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 939
+        width: 524
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_10
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 939
+        width: 524
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_11
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1219
+        width: 340
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_12
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 945
+        width: 340
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_13
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 565
+        width: 524
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_14
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 663
+        width: 340
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_15
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 663
+        width: 340
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_16
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 663
+        width: 340
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_17
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 673
+        width: 340
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_18
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 313
+        width: 220
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_19
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 313
+        width: 218
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_20
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 313
+        width: 220
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_21
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 313
+        width: 220
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_22
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 313
+        width: 220
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_23
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 395
+        width: 340
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_24
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 407
+        width: 340
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_25
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 123
+        width: 338
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blouse_26
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 139
+        width: 340
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

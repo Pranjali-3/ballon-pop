@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 45007b53cb80f5e4baf14ff11c10e67f
+timeCreated: 1485164321
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BalloonsItems_0
+    21300002: BalloonsItems_1
+    21300004: BalloonsItems_2
+    21300006: BalloonsItems_3
+    21300008: BalloonsItems_4
+    21300010: BalloonsItems_5
+    21300012: BalloonsItems_6
+    21300014: BalloonsItems_7
+    21300016: BalloonsItems_8
+    21300018: BalloonsItems_9
+    21300020: BalloonsItems_10
+    21300022: BalloonsItems_11
+    21300024: BalloonsItems_12
+    21300026: BalloonsItems_13
+    21300028: BalloonsItems_14
+    21300030: BalloonsItems_15
+    21300032: BalloonsItems_16
+    21300034: BalloonsItems_17
+    21300036: BalloonsItems_18
+    21300038: BalloonsItems_19
+    21300040: BalloonsItems_20
+    21300042: BalloonsItems_21
+    21300044: BalloonsItems_22
+    21300046: BalloonsItems_23
+    21300048: BalloonsItems_24
+    21300050: BalloonsItems_25
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BalloonsItems_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 908
+        width: 136
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 904
+        width: 99
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_2
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 902
+        width: 107
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 908
+        width: 108
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_4
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 897
+        width: 95
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_5
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 895
+        width: 122
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_6
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 886
+        width: 96
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_7
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 900
+        width: 118
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 762
+        width: 114
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_9
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 766
+        width: 104
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_10
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 782
+        width: 151
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_11
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 790
+        width: 157
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 793
+        width: 176
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_13
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 743
+        width: 87
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_14
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 715
+        width: 89
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_15
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 666
+        width: 94
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_16
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 660
+        width: 88
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_17
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 693
+        width: 104
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_18
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 686
+        width: 112
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_19
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 335
+        width: 167
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_20
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 333
+        width: 167
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_21
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 336
+        width: 176
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_22
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 335
+        width: 165
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_23
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 336
+        width: 168
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 176
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BalloonsItems_25
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 8
+        width: 174
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

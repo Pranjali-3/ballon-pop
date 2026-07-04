@@ -1,0 +1,718 @@
+fileFormatVersion: 2
+guid: 04710e36334efcf4980fc575de73c01c
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LogoTools_0
+    21300002: LogoTools_1
+    21300004: LogoTools_2
+    21300006: LogoTools_3
+    21300008: LogoTools_4
+    21300010: LogoTools_5
+    21300012: LogoTools_6
+    21300014: LogoTools_7
+    21300016: LogoTools_8
+    21300018: LogoTools_9
+    21300020: LogoTools_10
+    21300022: LogoTools_11
+    21300024: LogoTools_12
+    21300026: LogoTools_13
+    21300028: LogoTools_14
+    21300030: LogoTools_15
+    21300032: LogoTools_16
+    21300034: LogoTools_17
+    21300036: LogoTools_18
+    21300038: LogoTools_19
+    21300040: LogoTools_20
+    21300042: LogoTools_21
+    21300044: LogoTools_22
+    21300046: LogoTools_23
+    21300048: LogoTools_24
+    21300050: LogoTools_25
+    21300052: LogoTools_26
+    21300054: LogoTools_27
+    21300056: LogoTools_28
+    21300058: LogoTools_29
+    21300060: LogoTools_30
+    21300062: LogoTools_31
+    21300064: LogoTools_32
+    21300066: LogoTools_33
+    21300068: LogoTools_34
+    21300070: LogoTools_35
+    21300072: LogoTools_36
+    21300074: LogoTools_37
+    21300076: LogoTools_38
+    21300078: LogoTools_39
+    21300080: LogoTools_40
+    21300082: LogoTools_41
+    21300084: LogoTools_42
+    21300086: LogoTools_43
+    21300088: LogoTools_44
+    21300090: LogoTools_45
+    21300092: LogoTools_46
+    21300094: LogoTools_47
+    21300096: LogoTools_48
+    21300098: LogoTools_49
+    21300100: LogoTools_50
+    21300102: LogoTools_51
+    21300104: LogoTools_52
+    21300106: LogoTools_53
+    21300108: LogoTools_54
+    21300110: LogoTools_55
+    21300112: LogoTools_56
+    21300114: LogoTools_57
+    21300116: LogoTools_58
+    21300118: LogoTools_59
+    21300120: LogoTools_60
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LogoTools_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 670
+        width: 370
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 370
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_2
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 899
+        width: 136
+        height: 125
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_3
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 929
+        width: 133
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_4
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 909
+        width: 197
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_5
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 720
+        width: 103
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_6
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 750
+        width: 84
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_7
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 876
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_8
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 720
+        width: 86
+        height: 189
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_9
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 729
+        width: 59
+        height: 180
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_10
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 670
+        width: 121
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_11
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 740
+        width: 60
+        height: 169
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_12
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 720
+        width: 51
+        height: 189
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_13
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 535
+        width: 68
+        height: 185
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_14
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 720
+        width: 45
+        height: 119
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_15
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 535
+        width: 93
+        height: 185
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_16
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 535
+        width: 75
+        height: 185
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_17
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 535
+        width: 59
+        height: 185
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_18
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 546
+        width: 122
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_19
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 568
+        width: 94
+        height: 152
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_20
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_21
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_22
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_23
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_24
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_25
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_26
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_27
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_28
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 127
+        width: 61
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_29
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 127
+        width: 66
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_30
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 520
+        height: 127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 21
+        width: 337
+        height: 295
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_32
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 535
+        width: 121
+        height: 135
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_33
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 617
+        width: 22
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_34
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 535
+        width: 67
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_35
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 730
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_36
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 740
+        width: 30
+        height: 169
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_37
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 741
+        width: 30
+        height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_38
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 820
+        width: 45
+        height: 104
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_39
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 720
+        width: 45
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_40
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 0
+        width: 151
+        height: 127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_41
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 278
+        width: 135
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_42
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 278
+        width: 130
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_43
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_44
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_45
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_46
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_47
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_48
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_49
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_50
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 455
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_51
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 375
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_52
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 375
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_53
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 375
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_54
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 375
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_55
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 295
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_56
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 295
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_57
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 295
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_58
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 295
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_59
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 394
+        width: 59
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LogoTools_60
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 236
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

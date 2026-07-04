@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: 991d7314561eeef4a83bb1f0fb389a70
+timeCreated: 1485168592
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Interface_0
+    21300002: Interface_1
+    21300004: Interface_2
+    21300006: Interface_3
+    21300008: Interface_4
+    21300010: Interface_6
+    21300012: Interface_7
+    21300014: Interface_8
+    21300016: Interface_9
+    21300018: Interface_10
+    21300020: Interface_11
+    21300022: Interface_12
+    21300024: Interface_13
+    21300026: Interface_14
+    21300028: Interface_15
+    21300030: Interface_5
+    21300032: Interface_16
+    21300034: Interface_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Interface_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 899
+        width: 85
+        height: 116
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 915
+        width: 84
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_2
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 922
+        width: 90
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_3
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 931
+        width: 163
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 923
+        width: 82
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_6
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 925
+        width: 102
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_7
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 927
+        width: 256
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 728
+        width: 161
+        height: 158
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_9
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 725
+        width: 161
+        height: 161
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_10
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 709
+        width: 198
+        height: 197
+      alignment: 9
+      pivot: {x: .341098666, y: .34230271}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_11
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 763
+        width: 258
+        height: 148
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_12
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 752
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_13
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 423
+        width: 551
+        height: 286
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_14
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 461
+        width: 384
+        height: 275
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_15
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 214
+        width: 146
+        height: 190
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_5
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 282
+        width: 85
+        height: 116
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 116
+        width: 464
+        height: 68
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 37, y: 32, z: 38, w: 34}
+    - name: Interface_17
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 29
+        width: 464
+        height: 68
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
