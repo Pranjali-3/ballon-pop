@@ -52,7 +52,11 @@ public class ToyAlbumManager : MonoBehaviour
 		if (newToyIndicator != null)
 			newToyIndicator.SetActive(true);
 
+		SoundManager.PlaySound("ToyPop");
 		UpdateAlbumText();
+
+		if (GetUnlockedToyCount() >= totalToys)
+			AchievementManager.AddProgress("collect_all");
 	}
 
 	public void UpdateAlbumText()

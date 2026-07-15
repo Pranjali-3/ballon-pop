@@ -9,6 +9,8 @@ public class ComboManager : MonoBehaviour
 	public int comboBonusStep = 5;
 	public Text comboText;
 	public Animator comboAnimator;
+	public Image comboFillImage;
+	public GameObject comboEffectPrefab;
 
 	int comboCount;
 	float lastPopTime;
@@ -35,7 +37,7 @@ public class ComboManager : MonoBehaviour
 			comboCount = 1;
 
 		lastPopTime = Time.time;
-		UpdateComboText();
+		UpdateComboUI();
 
 		int bonusMultiplier = 1 + (comboCount / comboBonusStep);
 		return basePoints * bonusMultiplier;
@@ -45,15 +47,40 @@ public class ComboManager : MonoBehaviour
 	{
 		if (comboCount > 0 && Time.time - lastPopTime > comboWindow)
 			ResetCombo();
+
+		if (comboCount > 0 && comboFillImage != null)
+		{
+			float elapsed = Time.time - lastPopTime;
+			comboFillImage.fillAmount = 1f - (elapsed / comboWindow);
+		}
 	}
 
-	void UpdateComboText()
+	void UpdateComboUI()
 	{
 		if (comboText != null)
-			comboText.text = comboCount > 1 ? "x" + comboCount.ToString() : "";
+		{
+			if (comboCount > 1)
+			{
+				comboText.text = comboCount + "x COMBO!";
+				comboText.fontSize = Mathf.Min(36 + (comboCount / comboBonusStep) * 4, 72);
+			}
+			else
+			{
+				comboText.text = "";
+			}
+		}
 
 		if (comboAnimator != null && comboCount > 1)
-			comboAnimator.Play("TextAnimationActive", 0, 0);
+			comboAnimator.Play("ComboPulse", 0, 0);
+
+		if (comboCount == comboBonusStep || comboCount == comboBonusStep * 2 || comboCount == comboBonusStep * 3)
+		{
+			SoundManager.PlaySound("ComboBreak");
+			SoundManager.PlayMusic("Combo");
+
+			if (comboCount >= 10)
+				AchievementManager.AddProgress("combo_10");
+		}
 	}
 
 	public void ResetCombo()
@@ -63,5 +90,8 @@ public class ComboManager : MonoBehaviour
 
 		if (comboText != null)
 			comboText.text = "";
+
+		if (comboFillImage != null)
+			comboFillImage.fillAmount = 0f;
 	}
 }

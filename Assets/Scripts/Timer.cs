@@ -26,6 +26,9 @@ public class Timer : MonoBehaviour {
 
 	public static Timer instance;
 
+	Text gameOverCoinText;
+	Text gameOverStarText;
+
 	void Awake()
 	{
 		timer = GetComponent<Text>();
@@ -37,6 +40,51 @@ public class Timer : MonoBehaviour {
 		gamePaused = false;
 
 		instance = this;
+	}
+
+	void FindOrCreateGameOverTexts()
+	{
+		GameObject popup = LevelManager.levelManager.gameOverPopup;
+		if (popup == null) return;
+
+		gameOverCoinText = popup.transform.Find("CoinText")?.GetComponent<Text>();
+		gameOverStarText = popup.transform.Find("StarText")?.GetComponent<Text>();
+
+		if (gameOverCoinText == null)
+		{
+			GameObject coinObj = new GameObject("CoinText");
+			coinObj.transform.SetParent(popup.transform, false);
+			gameOverCoinText = coinObj.AddComponent<Text>();
+			gameOverCoinText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+			if (gameOverCoinText.font == null)
+				gameOverCoinText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+			gameOverCoinText.fontSize = 22;
+			gameOverCoinText.color = new Color(1f, 0.84f, 0f, 1f);
+			gameOverCoinText.alignment = TextAnchor.MiddleCenter;
+			RectTransform rt = coinObj.GetComponent<RectTransform>();
+			rt.anchorMin = new Vector2(0.5f, 0.3f);
+			rt.anchorMax = new Vector2(0.5f, 0.3f);
+			rt.anchoredPosition = Vector2.zero;
+			rt.sizeDelta = new Vector2(400f, 40f);
+		}
+
+		if (gameOverStarText == null)
+		{
+			GameObject starObj = new GameObject("StarText");
+			starObj.transform.SetParent(popup.transform, false);
+			gameOverStarText = starObj.AddComponent<Text>();
+			gameOverStarText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+			if (gameOverStarText.font == null)
+				gameOverStarText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+			gameOverStarText.fontSize = 22;
+			gameOverStarText.color = Color.yellow;
+			gameOverStarText.alignment = TextAnchor.MiddleCenter;
+			RectTransform rt = starObj.GetComponent<RectTransform>();
+			rt.anchorMin = new Vector2(0.5f, 0.24f);
+			rt.anchorMax = new Vector2(0.5f, 0.24f);
+			rt.anchoredPosition = Vector2.zero;
+			rt.sizeDelta = new Vector2(400f, 40f);
+		}
 	}
 
 	public void AddTime(float sec)
@@ -93,7 +141,7 @@ public class Timer : MonoBehaviour {
 				{
 					videoAvailableChecked = true;
 
-					if (!LevelManager.alreadyContinuedWithVideo)
+					if (!LevelManager.alreadyContinuedWithVideo && AdsManager.Instance != null)
 						AdsManager.Instance.IsVideoRewardAvailable();
 				}
 
@@ -146,25 +194,32 @@ public class Timer : MonoBehaviour {
 
 					if (AdsManager.videoReady && !LevelManager.alreadyContinuedWithVideo)
 						LevelManager.levelManager.watchVideoPanelHolder.SetActive(true);
-//						LevelManager.levelManager.watchVideoPanelHolder.GetComponent<Animator>().Play("WatchVideo", 0, 0);
 
 					gameoverCalled = true;
 
 					// Check if its highscore
 					if (LevelManager.levelManager.pointsScored > PlayerPrefs.GetInt("ScoreOfTheHighes"))
 					{
-						// Set highscore in prefs and send to play services
 						PlayerPrefs.SetInt("ScoreOfTheHighes", LevelManager.levelManager.pointsScored);
-
-						GlobalVariables.globalVariables.PostScoreToLeaderboard(LevelManager.levelManager.pointsScored);
+						if (GlobalVariables.globalVariables != null)
+							GlobalVariables.globalVariables.PostScoreToLeaderboard(LevelManager.levelManager.pointsScored);
 					}
-						
 
-					// Play won sound
-//					SoundManager.Instance.Play_WonSound();
+					int starsEarned = Mathf.Clamp(LevelManager.levelManager.pointsScored / 50, 1, 3);
+					ThemeProgressionManager.AddStars(starsEarned);
+					if (starsEarned >= 2)
+						SoundManager.PlayMusic("Victory");
+					else
+						SoundManager.PlayMusic("GameOver");
 
-//					UndressingGameManager.instance.GameOver();
-					ThemeProgressionManager.AddStars(Mathf.Clamp(LevelManager.levelManager.pointsScored / 50, 1, 3));
+					int baseCoinBonus = Mathf.Clamp(LevelManager.levelManager.pointsScored / 10, 1, 50);
+					ShopManager.AddCoins(baseCoinBonus);
+
+					FindOrCreateGameOverTexts();
+					if (gameOverCoinText != null)
+						gameOverCoinText.text = "Coins earned: " + (LevelManager.levelManager.coinsEarned + baseCoinBonus).ToString();
+					if (gameOverStarText != null)
+						gameOverStarText.text = "Stars earned: " + starsEarned.ToString() + " / 3";
 				}
 			}
 		}

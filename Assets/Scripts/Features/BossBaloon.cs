@@ -21,12 +21,19 @@ public class BossBaloon : MonoBehaviour
 		{
 			LevelManager.levelManager.ScorePoint(rewardPoints);
 			MissionManager.AddProgress(MissionType.PopBosses, 1);
+			AchievementManager.AddProgress("boss_5");
 			LevelManager.levelManager.PlayParticleOnPosition(transform.localPosition);
 			Destroy(gameObject);
 			return true;
 		}
 
 		return false;
+	}
+
+	void OnDestroy()
+	{
+		if (LevelManager.levelManager != null && !LevelManager.gameOver)
+			SoundManager.PlayMusic("Gameplay");
 	}
 
 	void UpdateHitPointsText()

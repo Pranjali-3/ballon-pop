@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -28,7 +28,7 @@ public class Baloon : MonoBehaviour {
 	void Awake()
 	{
 		// Set baloon type FIXME za sada stavljam da bude to random vrednost
-		if (tag == "Baloon")
+		if (tag == "Baloon" || tag != "InnerBaloon")
 		{
 //			baloonType = Random.Range(0, 6);
 //
@@ -164,7 +164,10 @@ public class Baloon : MonoBehaviour {
 				Destroy(transform.GetChild(1).gameObject);
 			}
 
-			movingSpeed = Random.Range(LevelManager.levelManager.minBaloonSpeed, LevelManager.levelManager.maxBaloonSpeed);
+			float minSpeed = LevelManager.levelManager != null ? LevelManager.levelManager.minBaloonSpeed : 2.0f;
+			float maxSpeed = LevelManager.levelManager != null ? LevelManager.levelManager.maxBaloonSpeed : 4.0f;
+			movingSpeed = Random.Range(minSpeed, maxSpeed);
+			if (movingSpeed <= 0f) movingSpeed = 2f;
 		}
 		else if (tag == "InnerBaloon")
 		{
@@ -189,6 +192,69 @@ public class Baloon : MonoBehaviour {
 				break;
 			default:
 				break;
+			}
+		}
+	}
+
+	public void MakeEducationalBaloon(EducationalSubject subject)
+	{
+		baloonType = 10 + (int)subject;
+
+		string label = "";
+		switch (subject)
+		{
+		case EducationalSubject.Letters:
+			label = ((char)('A' + Random.Range(0, 26))).ToString();
+			break;
+		case EducationalSubject.Numbers:
+			label = Random.Range(1, 21).ToString();
+			break;
+		case EducationalSubject.Animals:
+			label = new string[] { "CAT", "DOG", "BIRD", "FISH", "LION", "BEAR", "DUCK", "FROG", "OWL", "COW" }[Random.Range(0, 10)];
+			break;
+		case EducationalSubject.Colors:
+			label = new string[] { "RED", "BLUE", "GREEN", "YELLOW", "ORANGE", "PURPLE", "PINK", "BROWN", "BLACK", "WHITE" }[Random.Range(0, 10)];
+			break;
+		case EducationalSubject.Shapes:
+			label = new string[] { "CIRCLE", "SQUARE", "TRIANGLE", "STAR", "HEART", "DIAMOND", "OVAL", "RECTANGLE" }[Random.Range(0, 8)];
+			break;
+		}
+
+		Text labelText = GetComponentInChildren<Text>();
+		if (labelText == null)
+		{
+			GameObject textGo = new GameObject("EducationalText");
+			textGo.transform.SetParent(transform, false);
+			labelText = textGo.AddComponent<Text>();
+			labelText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+			if (labelText.font == null)
+				labelText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+
+			RectTransform rt = textGo.GetComponent<RectTransform>();
+			if (rt != null)
+			{
+				rt.anchorMin = Vector2.zero;
+				rt.anchorMax = Vector2.one;
+				rt.offsetMin = Vector2.zero;
+				rt.offsetMax = Vector2.zero;
+			}
+		}
+
+		labelText.text = label;
+		labelText.fontSize = 28;
+		labelText.fontStyle = FontStyle.Bold;
+		labelText.color = Color.white;
+		labelText.alignment = TextAnchor.MiddleCenter;
+		labelText.resizeTextForBestFit = true;
+		labelText.resizeTextMinSize = 12;
+		labelText.resizeTextMaxSize = 32;
+
+		for (int i = 0; i < transform.childCount; i++)
+		{
+			Image img = transform.GetChild(i).GetComponent<Image>();
+			if (img != null)
+			{
+				img.enabled = false;
 			}
 		}
 	}

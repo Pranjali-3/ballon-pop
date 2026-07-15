@@ -10,16 +10,20 @@ public class Menu : MonoBehaviour {
 
 
 	private Animator _animtor;
+	private bool _hasIsOpenParam;
 
 	public bool IsOpen
 	{
 		get
 		{
-			return _animtor.GetBool("IsOpen");
+			if (_animtor != null && _hasIsOpenParam)
+				return _animtor.GetBool("IsOpen");
+			return false;
 		}
 		set
 		{
-			_animtor.SetBool("IsOpen", value);
+			if (_animtor != null && _hasIsOpenParam && _animtor.isActiveAndEnabled)
+				_animtor.SetBool("IsOpen", value);
 		}
 	}
 
@@ -27,6 +31,13 @@ public class Menu : MonoBehaviour {
 	public void Awake () 
 	{
 		_animtor = GetComponent<Animator> ();
+		if (_animtor != null)
+		{
+			foreach (var p in _animtor.parameters)
+			{
+				if (p.name == "IsOpen") { _hasIsOpenParam = true; break; }
+			}
+		}
 
 		var rect = GetComponent<RectTransform> ();
 		rect.offsetMax = rect.offsetMin = new Vector2 (0, 0);

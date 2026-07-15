@@ -43,10 +43,28 @@ public class FingerPower : MonoBehaviour {
 				{
 					if (hit.collider.tag == "PointBaloon")
 					{
-						switch (hit.collider.gameObject.transform.parent.GetComponent<Baloon>().baloonType)
+						int bType = hit.collider.gameObject.transform.parent.GetComponent<Baloon>().baloonType;
+
+						if (bType >= 10)
+						{
+							SoundManager.PlaySound("BaloonPop");
+							LevelManager.levelManager.ScorePoint(2);
+							ShopManager.AddCoins(1);
+							StartCoroutine(DestroyObjectAfterDelay(hit.collider.gameObject.transform.parent.gameObject));
+							LevelManager.levelManager.PlayParticleOnPosition(hit.collider.transform.parent.localPosition);
+							hit.collider.enabled = false;
+							return;
+						}
+						else
+						{
+						switch (bType)
 						{
 						case 0:
 							LevelManager.levelManager.ScorePoint(1);
+
+							AchievementManager.AddProgress("first_pop");
+							AchievementManager.AddProgress("pop_50");
+							AchievementManager.AddProgress("pop_500");
 
 							// Play baloon pop sound
 							SoundManager.PlaySound("BaloonPop");
@@ -94,10 +112,17 @@ public class FingerPower : MonoBehaviour {
 						case 4:
 							LevelManager.levelManager.ScorePoint(1);
 
-							// Play baloon pop sound
-							SoundManager.PlaySound("MinusSec");
-
-							LevelManager.levelManager.timer.AddTime(-LevelManager.levelManager.substractTimeAmount);
+							if (PlayerPrefs.GetInt("ShieldActive", 0) == 1)
+							{
+								SoundManager.PlaySound("PlusSec");
+								PlayerPrefs.SetInt("ShieldActive", 0);
+								PlayerPrefs.Save();
+							}
+							else
+							{
+								SoundManager.PlaySound("MinusSec");
+								LevelManager.levelManager.timer.AddTime(-LevelManager.levelManager.substractTimeAmount);
+							}
 							StartCoroutine(DestroyObjectAfterDelay(hit.collider.gameObject.transform.parent.gameObject));
 							break;
 						case 5:
@@ -164,6 +189,7 @@ public class FingerPower : MonoBehaviour {
 							break;
 						default:
 							break;
+						}
 						}
 
 						LevelManager.levelManager.PlayParticleOnPosition(hit.collider.transform.parent.localPosition);
@@ -267,12 +293,29 @@ public class FingerPower : MonoBehaviour {
 						{
 							hit[j].collider.enabled = false;
 
-							switch (hit[j].collider.gameObject.transform.parent.GetComponent<Baloon>().baloonType)
+							int bType = hit[j].collider.gameObject.transform.parent.GetComponent<Baloon>().baloonType;
+
+							if (bType >= 10)
+							{
+								SoundManager.PlaySound("BaloonPop");
+								LevelManager.levelManager.ScorePoint(2);
+								ShopManager.AddCoins(1);
+								LevelManager.levelManager.PlayAddPointOnPosition(hit[j].collider.transform.parent.localPosition, 2);
+								StartCoroutine(DestroyObjectAfterDelay(hit[j].collider.gameObject.transform.parent.gameObject));
+								LevelManager.levelManager.PlayParticleOnPosition(hit[j].collider.transform.parent.localPosition);
+								continue;
+							}
+							else
+							{
+							switch (bType)
 							{
 							case 0:
 								LevelManager.levelManager.ScorePoint(1);
 
-								// Play baloon pop sound
+								AchievementManager.AddProgress("first_pop");
+								AchievementManager.AddProgress("pop_50");
+								AchievementManager.AddProgress("pop_500");
+
 								SoundManager.PlaySound("BaloonPop");
 
 								LevelManager.levelManager.PlayAddPointOnPosition(hit[j].collider.transform.parent.localPosition, 1);
@@ -329,12 +372,19 @@ public class FingerPower : MonoBehaviour {
 							case 4:
 //								LevelManager.levelManager.ScorePoint(1);
 
-								// Play baloon pop sound
-								SoundManager.PlaySound("MinusSec");
-
+								if (PlayerPrefs.GetInt("ShieldActive", 0) == 1)
+								{
+									SoundManager.PlaySound("PlusSec");
+									PlayerPrefs.SetInt("ShieldActive", 0);
+									PlayerPrefs.Save();
+								}
+								else
+								{
+									SoundManager.PlaySound("MinusSec");
+									LevelManager.levelManager.timer.AddTime(-LevelManager.levelManager.substractTimeAmount);
+								}
 								LevelManager.levelManager.PlayLoseTimeOnPosition(hit[j].collider.transform.parent.localPosition);
 
-								LevelManager.levelManager.timer.AddTime(-LevelManager.levelManager.substractTimeAmount);
 								StartCoroutine(DestroyObjectAfterDelay(hit[j].collider.gameObject.transform.parent.gameObject));
 								break;
 							case 5:
@@ -403,6 +453,7 @@ public class FingerPower : MonoBehaviour {
 								break;
 							default:
 								break;
+							}
 							}
 
 							LevelManager.levelManager.PlayParticleOnPosition(hit[j].collider.transform.parent.localPosition);

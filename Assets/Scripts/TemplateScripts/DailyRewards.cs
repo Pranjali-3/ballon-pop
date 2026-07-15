@@ -11,10 +11,13 @@ using System.Collections.Generic;
   **/
 public class DailyRewards : MonoBehaviour {
 
+	public static DailyRewards Instance;
+
 	public static int [] DailyRewardAmount = new int[]{0,100, 200, 300, 400, 500, 1000};
 	int OneDayTime=60*60*24;
 	public static int LevelReward;
 	bool rewardCompleted = false;
+	public GameObject dailyRewardPopup;
 	List<int> availableSixthReward=new List<int>();
 	int sixDayCount, typeOfSixReward; // typeOfSixReward 0-stars, 1-blades, 2-bomb, 3-laser, 4-tesla
 	Text moneyText;
@@ -25,6 +28,7 @@ public class DailyRewards : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		Instance = this;
 		if(PlayerPrefs.HasKey("SixDayCount"))
 		{
 			sixDayCount=PlayerPrefs.GetInt("SixDayCount");

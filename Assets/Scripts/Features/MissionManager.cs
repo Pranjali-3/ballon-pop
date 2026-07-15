@@ -54,7 +54,14 @@ public class MissionManager : MonoBehaviour
 			if (activeMissions[i].currentAmount >= activeMissions[i].targetAmount)
 			{
 				activeMissions[i].currentAmount = activeMissions[i].targetAmount;
-				activeMissions[i].completed = true;
+				if (!activeMissions[i].completed)
+				{
+					activeMissions[i].completed = true;
+					if (LevelManager.levelManager != null)
+					{
+						LevelManager.levelManager.TriggerMilestoneBanner("Daily Target Achieved!");
+					}
+				}
 			}
 		}
 
@@ -85,26 +92,63 @@ public class MissionManager : MonoBehaviour
 		missionText.text = text;
 	}
 
-	void EnsureDefaultMissions()
+	public void EnsureDefaultMissions(bool forceReset = false)
 	{
-		if (activeMissions != null && activeMissions.Length > 0)
+		if (!forceReset && activeMissions != null && activeMissions.Length > 0)
 			return;
 
-		activeMissions = new Mission[3];
+		int selectedStage = PlayerPrefs.GetInt("SelectedProgressionLevel", 0);
 
+		activeMissions = new Mission[1];
 		activeMissions[0] = new Mission();
-		activeMissions[0].type = MissionType.PopBalloons;
-		activeMissions[0].description = "Pop";
-		activeMissions[0].targetAmount = 30;
 
-		activeMissions[1] = new Mission();
-		activeMissions[1].type = MissionType.CollectToys;
-		activeMissions[1].description = "Toys";
-		activeMissions[1].targetAmount = 3;
+		switch (selectedStage)
+		{
+			case 0:
+				activeMissions[0].type = MissionType.PopBalloons;
+				activeMissions[0].description = "Pop Balloons:";
+				activeMissions[0].targetAmount = 20;
+				break;
+			case 1:
+				activeMissions[0].type = MissionType.ScorePoints;
+				activeMissions[0].description = "Score Points:";
+				activeMissions[0].targetAmount = 40;
+				break;
+			case 2:
+				activeMissions[0].type = MissionType.CollectToys;
+				activeMissions[0].description = "Collect Toys:";
+				activeMissions[0].targetAmount = 2;
+				break;
+			case 3:
+				activeMissions[0].type = MissionType.ScorePoints;
+				activeMissions[0].description = "Score Points:";
+				activeMissions[0].targetAmount = 60;
+				break;
+			case 4:
+				activeMissions[0].type = MissionType.CollectToys;
+				activeMissions[0].description = "Collect Toys:";
+				activeMissions[0].targetAmount = 3;
+				break;
+			default:
+				activeMissions[0].type = MissionType.PopBalloons;
+				activeMissions[0].description = "Pop Balloons:";
+				activeMissions[0].targetAmount = 20;
+				break;
+		}
 
-		activeMissions[2] = new Mission();
-		activeMissions[2].type = MissionType.ScorePoints;
-		activeMissions[2].description = "Score";
-		activeMissions[2].targetAmount = 100;
+		activeMissions[0].currentAmount = 0;
+		activeMissions[0].completed = false;
+	}
+
+	public void ResetMissionProgress()
+	{
+		EnsureDefaultMissions(true);
+		RefreshMissionText();
+	}
+
+	public void ResetMissionForSelectedStage()
+	{
+		EnsureDefaultMissions(true);
+		RefreshMissionText();
 	}
 }

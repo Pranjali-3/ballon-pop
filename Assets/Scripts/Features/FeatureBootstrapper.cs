@@ -9,6 +9,20 @@ public static class FeatureBootstrapper
 		EnsureManager<ToyAlbumManager>("ToyAlbumManager");
 		EnsureManager<ThemeProgressionManager>("ThemeProgressionManager");
 		EnsureManager<ProgressionMapManager>("ProgressionMapManager");
+		EnsureManager<ShopManager>("ShopManager");
+		EnsureManager<AchievementManager>("AchievementManager");
+		EnsureManager<EducationalModeManager>("EducationalModeManager");
+		EnsureSoundManager();
+	}
+
+	static void EnsureSoundManager()
+	{
+		SoundManager existing = GameObject.FindObjectOfType<SoundManager>() as SoundManager;
+		if (existing != null)
+			return;
+		GameObject holder = new GameObject("SoundManager");
+		GameObject.DontDestroyOnLoad(holder);
+		holder.AddComponent<SoundManager>();
 	}
 
 	static T EnsureManager<T>(string objectName) where T : Component
