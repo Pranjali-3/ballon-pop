@@ -86,6 +86,7 @@ public class MenuManager : MonoBehaviour
 		if (Application.loadedLevelName == "MainScene")
 		{
 			SetHomeScreenBackground();
+			DestroyTitleAndRepositionButtons();
 			ApplyTinyPoppersTextReplacements();
 			RemoveTopTitleAndLyrics();
 			EnlargeTinyPoppersLogo();
@@ -712,7 +713,7 @@ public class MenuManager : MonoBehaviour
 	void StyleMainSceneButtons()
 	{
 		Button[] buttons = Resources.FindObjectsOfTypeAll<Button>();
-		Color skyBlue = new Color(0f, 0.67f, 0.93f, 1f);
+		Color green = new Color(0.2f, 0.8f, 0.3f, 1f);
 		foreach (Button btn in buttons)
 		{
 			if (btn == null)
@@ -726,7 +727,7 @@ public class MenuManager : MonoBehaviour
 
 			if (img != null)
 			{
-				img.color = skyBlue;
+				img.color = green;
 
 				Outline btnOutline = btn.gameObject.GetComponent<Outline>();
 				if (btnOutline != null)
@@ -745,6 +746,106 @@ public class MenuManager : MonoBehaviour
 		}
 	}
 
+	void DestroyTitleAndRepositionButtons()
+	{
+		Debug.Log("[LAYOUT] DestroyTitleAndRepositionButtons called");
+
+		// Destroy any text that is the "Tiny Poppers" main title
+		Text[] allTexts = GetComponentsInChildren<Text>(true);
+		int removed = 0;
+		foreach (Text t in allTexts)
+		{
+			if (t == null) continue;
+			if (t.text == "Tiny Poppers" || t.text == "Balloon Popping" || t.text == "Balloon Pop" || t.gameObject.name == "TinyPoppersTitle")
+			{
+				Debug.Log("[LAYOUT] Destroying title: \"" + t.text + "\" on " + t.gameObject.name);
+				Destroy(t.gameObject);
+				removed++;
+			}
+		}
+		Debug.Log("[LAYOUT] Destroyed " + removed + " title texts");
+
+		Color green = new Color(0.2f, 0.8f, 0.3f, 1f);
+
+		// Create a round button texture
+		Texture2D roundTex = new Texture2D(128, 128);
+		float radius = 64f;
+		float r2 = radius * radius;
+		for (int y = 0; y < 128; y++)
+		{
+			for (int x = 0; x < 128; x++)
+			{
+				float dx = x - 63.5f;
+				float dy = y - 63.5f;
+				roundTex.SetPixel(x, y, (dx * dx + dy * dy) <= r2 ? Color.white : Color.clear);
+			}
+		}
+		roundTex.Apply();
+		Sprite roundSprite = Sprite.Create(roundTex, new Rect(0, 0, 128, 128), new Vector2(0.5f, 0.5f));
+		Debug.Log("[LAYOUT] Round sprite created: " + roundSprite.rect.size);
+
+		// Music button — bottom-left corner, round, green
+		if (soundButton != null)
+		{
+			RectTransform rt = soundButton.GetComponent<RectTransform>();
+			rt.anchorMin = new Vector2(0f, 0f);
+			rt.anchorMax = new Vector2(0f, 0f);
+			rt.pivot = new Vector2(0.5f, 0.5f);
+			rt.anchoredPosition = new Vector2(80f, 80f);
+			rt.sizeDelta = new Vector2(120f, 120f);
+			Image img = soundButton.GetComponent<Image>();
+			if (img != null) { img.sprite = roundSprite; img.color = green; img.type = Image.Type.Simple; }
+			Text txt = soundButton.GetComponentInChildren<Text>(true);
+			if (txt != null) { txt.text = "♪"; txt.fontSize = 36; }
+			Debug.Log("[LAYOUT] Sound button repositioned");
+		}
+		else
+		{
+			Debug.LogWarning("[LAYOUT] soundButton is null! Check MenuManager inspector reference.");
+		}
+
+		// "How to Play" button — top-left corner, round, green
+		Button howToPlayBtn = FindButtonByText("how to play") ?? FindButtonByText("instructions") ?? FindButtonByText("tutorial");
+		if (howToPlayBtn == null)
+		{
+			GameObject go = new GameObject("HowToPlayButton");
+			go.transform.SetParent(transform, false);
+			howToPlayBtn = go.AddComponent<Button>();
+			howToPlayBtn.targetGraphic = go.AddComponent<Image>();
+			Text t = new GameObject("Text").AddComponent<Text>();
+			t.transform.SetParent(go.transform, false);
+			t.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+			if (t.font == null) t.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+			t.text = "?";
+			t.fontSize = 36;
+			t.fontStyle = FontStyle.Bold;
+			t.alignment = TextAnchor.MiddleCenter;
+			t.color = Color.white;
+			RectTransform tr = t.GetComponent<RectTransform>();
+			tr.anchorMin = Vector2.zero; tr.anchorMax = Vector2.one;
+			tr.offsetMin = Vector2.zero; tr.offsetMax = Vector2.zero;
+			Debug.Log("[LAYOUT] Created new HowToPlayButton");
+		}
+		if (howToPlayBtn != null)
+		{
+			RectTransform rt = howToPlayBtn.GetComponent<RectTransform>();
+			rt.anchorMin = new Vector2(0f, 1f);
+			rt.anchorMax = new Vector2(0f, 1f);
+			rt.pivot = new Vector2(0.5f, 0.5f);
+			rt.anchoredPosition = new Vector2(80f, -80f);
+			rt.sizeDelta = new Vector2(120f, 120f);
+			Image img = howToPlayBtn.GetComponent<Image>();
+			if (img != null) { img.sprite = roundSprite; img.color = green; img.type = Image.Type.Simple; }
+
+			howToPlayBtn.onClick = new Button.ButtonClickedEvent();
+			howToPlayBtn.onClick.AddListener(new UnityEngine.Events.UnityAction(delegate {
+				SoundManager.PlaySound("ButtonClick");
+				ShowPopUpMessage("How to Play", "Pop the balloons by tapping on them!\nWatch out for bombs!\nCollect toys and coins!\nHave fun!");
+			}));
+			Debug.Log("[LAYOUT] HowToPlay button setup complete");
+		}
+	}
+
 	void SetHomeScreenBackground()
 	{
 		Texture2D tex = Resources.Load<Texture2D>("BgHomeScreen");
@@ -756,32 +857,26 @@ public class MenuManager : MonoBehaviour
 		Sprite bgSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
 		Debug.Log("BgHomeScreen loaded: " + tex.width + "x" + tex.height);
 
-		// Clear Image/RawImage on Canvas itself
-		Image ci = GetComponent<Image>();
-		if (ci != null) { ci.sprite = null; ci.color = Color.clear; }
-		RawImage cri = GetComponent<RawImage>();
-		if (cri != null) { cri.texture = null; cri.color = Color.clear; }
-
-		// Collect non-button child Images & RawImages to destroy
-		var toDestroy = new System.Collections.Generic.List<GameObject>();
-		foreach (var img in GetComponentsInChildren<Image>(true))
+		// Search for common background names
+		string[] bgNames = new string[] { "Background", "Bg", "BG", "bg", "Panel", "panel", "CanvasBackground" };
+		foreach (string name in bgNames)
 		{
-			if (img == null || img.gameObject == gameObject) continue;
-			if (img.GetComponent<Button>() != null) continue;
-			if (img.gameObject.name == "BgHomeScreen") continue;
-			toDestroy.Add(img.gameObject);
+			GameObject go = GameObject.Find(name);
+			if (go != null)
+			{
+				Image img = go.GetComponent<Image>();
+				if (img != null)
+				{
+					img.sprite = bgSprite;
+					img.color = Color.white;
+					img.type = Image.Type.Simple;
+					Debug.Log("[BG] Replaced sprite on \"" + name + "\"");
+					return;
+				}
+			}
 		}
-		foreach (var ri in GetComponentsInChildren<RawImage>(true))
-		{
-			if (ri == null || ri.gameObject == gameObject) continue;
-			if (ri.GetComponent<Button>() != null) continue;
-			if (ri.gameObject.name == "BgHomeScreen") continue;
-			if (!toDestroy.Contains(ri.gameObject)) toDestroy.Add(ri.gameObject);
-		}
-		foreach (GameObject go in toDestroy)
-			GameObject.DestroyImmediate(go);
 
-		// Create fresh background as very first child
+		// Fallback: create new background
 		GameObject bgObj = new GameObject("BgHomeScreen");
 		bgObj.transform.SetParent(transform, false);
 		bgObj.transform.SetAsFirstSibling();
@@ -792,6 +887,6 @@ public class MenuManager : MonoBehaviour
 		bgRt.anchorMax = Vector2.one;
 		bgRt.offsetMin = Vector2.zero;
 		bgRt.offsetMax = Vector2.zero;
-		Debug.Log("[BG] Done");
+		Debug.Log("[BG] Created new BgHomeScreen");
 	}
 }
