@@ -54,9 +54,11 @@ public class MenuManager : MonoBehaviour
 		if(Application.loadedLevelName != "MapScene")
 		{
 			if (currentMenu != null)
-				ShowMenu(currentMenu.gameObject);
-			else
-				Debug.LogWarning("[START] currentMenu is null!");
+			{
+				currentMenu.gameObject.SetActive(true);
+				Animator anim = currentMenu.GetComponent<Animator>();
+				if (anim != null) anim.enabled = false;
+			}
 		}
 		
 		if(Application.loadedLevelName=="MainScene")
@@ -80,7 +82,7 @@ public class MenuManager : MonoBehaviour
 					Rate.appStartedNumber=0;
 					PlayerPrefs.SetInt("appStartedNumber",Rate.appStartedNumber);
 					PlayerPrefs.Save();
-					ShowPopUpMenu(ratePopUp);
+					if (ratePopUp != null) ratePopUp.SetActive(false);
 				}
 			}
 		}
@@ -92,6 +94,12 @@ public class MenuManager : MonoBehaviour
 
 		if (Application.loadedLevelName == "MainScene")
 		{
+			// Disable all animators to prevent flash animations
+			foreach (var anim in GetComponentsInChildren<Animator>(true))
+			{
+				if (anim != null) anim.enabled = false;
+			}
+
 			SetHomeScreenBackground();
 			DestroyTitleAndRepositionButtons();
 			ApplyTinyPoppersTextReplacements();
@@ -394,6 +402,7 @@ public class MenuManager : MonoBehaviour
 
 	void Awake()
 	{
+		Debug.Log("[AWAKE] MenuManager Awake called");
 		FeatureBootstrapper.EnsureManagers();
 
 		// Set sound button
@@ -523,8 +532,8 @@ public class MenuManager : MonoBehaviour
 			if (label == null || string.IsNullOrEmpty(label.text))
 				continue;
 
-			if (label.text == "Balloon Popping" || label.text == "Balloon Pop" || label.text == "BaloonPoper")
-				label.text = "Tiny Poppers";
+			if (label.text == "Balloon Popping" || label.text == "Balloon Pop" || label.text == "BaloonPoper" || label.text == "Tiny Poppers")
+				Destroy(label.gameObject);
 		}
 	}
 
@@ -555,26 +564,21 @@ public class MenuManager : MonoBehaviour
 
 	void EnlargeTinyPoppersLogo()
 	{
+		// Destroy logo image if present
 		Image[] images = GetComponentsInChildren<Image>(true);
 		foreach (Image image in images)
 		{
 			if (image == null || image.sprite == null || image.sprite.texture == null)
 				continue;
 
-			if (image.sprite.texture.name != "Interface")
-				continue;
-
-			Rect spriteRect = image.sprite.rect;
-			bool looksLikeLogoSprite = spriteRect.width > 400f && spriteRect.height > 200f;
-			if (!looksLikeLogoSprite)
-				continue;
-
-			RectTransform rect = image.GetComponent<RectTransform>();
-			if (rect == null)
-				continue;
-
-			rect.localScale = new Vector3(1.18f, 1.18f, 1f);
-			rect.SetAsLastSibling();
+			if (image.sprite.texture.name == "Interface")
+			{
+				Rect spriteRect = image.sprite.rect;
+				if (spriteRect.width > 400f && spriteRect.height > 200f)
+				{
+					Destroy(image.gameObject);
+				}
+			}
 		}
 	}
 
