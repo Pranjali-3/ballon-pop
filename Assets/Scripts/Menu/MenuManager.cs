@@ -747,42 +747,43 @@ public class MenuManager : MonoBehaviour
 
 	void SetHomeScreenBackground()
 	{
-		// Remove all existing opaque background-like images on Canvas children
+		Texture2D tex = Resources.Load<Texture2D>("BgHomeScreen");
+		if (tex == null)
+		{
+			Debug.LogWarning("BgHomeScreen texture not found in Resources!");
+			return;
+		}
+		Sprite bgSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+		Debug.Log("BgHomeScreen loaded: " + tex.width + "x" + tex.height);
+
+		// Replace the first full-screen Image we find with our background
 		Image[] allImages = GetComponentsInChildren<Image>(true);
 		foreach (Image img in allImages)
 		{
-			if (img.gameObject.name == "BgHomeScreen")
-				continue;
-			if (img.GetComponent<Button>() != null)
-				continue;
-			if (img.canvas != null && img.canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+			if (img == null) continue;
+			RectTransform rt = img.GetComponent<RectTransform>();
+			if (rt == null) continue;
+			if (rt.anchorMin == Vector2.zero && rt.anchorMax == Vector2.one)
 			{
-				img.color = Color.clear;
-				img.sprite = null;
+				img.sprite = bgSprite;
+				img.color = Color.white;
+				img.type = Image.Type.Simple;
+				Debug.Log("[BG] Set sprite on: \"" + img.gameObject.name + "\"");
+				return;
 			}
 		}
 
+		// No full-screen Image found; create a new one
 		GameObject bgObj = new GameObject("BgHomeScreen");
 		bgObj.transform.SetParent(transform, false);
 		bgObj.transform.SetAsFirstSibling();
-
 		Image bgImage = bgObj.AddComponent<Image>();
-		Texture2D tex = Resources.Load<Texture2D>("BgHomeScreen");
-		if (tex != null)
-		{
-			bgImage.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-			Debug.Log("BgHomeScreen loaded: " + tex.width + "x" + tex.height);
-		}
-		else
-		{
-			bgImage.color = new Color(0f, 0.67f, 0.93f, 1f);
-			Debug.LogWarning("BgHomeScreen texture not found in Resources!");
-		}
-
-		RectTransform rt = bgObj.GetComponent<RectTransform>();
-		rt.anchorMin = Vector2.zero;
-		rt.anchorMax = Vector2.one;
-		rt.offsetMin = Vector2.zero;
-		rt.offsetMax = Vector2.zero;
+		bgImage.sprite = bgSprite;
+		RectTransform bgRt = bgObj.GetComponent<RectTransform>();
+		bgRt.anchorMin = Vector2.zero;
+		bgRt.anchorMax = Vector2.one;
+		bgRt.offsetMin = Vector2.zero;
+		bgRt.offsetMax = Vector2.zero;
+		Debug.Log("[BG] Created new BgHomeScreen");
 	}
 }
