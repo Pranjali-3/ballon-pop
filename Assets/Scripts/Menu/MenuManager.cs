@@ -756,24 +756,32 @@ public class MenuManager : MonoBehaviour
 		Sprite bgSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
 		Debug.Log("BgHomeScreen loaded: " + tex.width + "x" + tex.height);
 
-		// Replace the first full-screen Image we find with our background
-		Image[] allImages = GetComponentsInChildren<Image>(true);
-		foreach (Image img in allImages)
-		{
-			if (img == null) continue;
-			RectTransform rt = img.GetComponent<RectTransform>();
-			if (rt == null) continue;
-			if (rt.anchorMin == Vector2.zero && rt.anchorMax == Vector2.one)
-			{
-				img.sprite = bgSprite;
-				img.color = Color.white;
-				img.type = Image.Type.Simple;
-				Debug.Log("[BG] Set sprite on: \"" + img.gameObject.name + "\"");
-				return;
-			}
-		}
+		// Clear Image/RawImage on Canvas itself
+		Image ci = GetComponent<Image>();
+		if (ci != null) { ci.sprite = null; ci.color = Color.clear; }
+		RawImage cri = GetComponent<RawImage>();
+		if (cri != null) { cri.texture = null; cri.color = Color.clear; }
 
-		// No full-screen Image found; create a new one
+		// Collect non-button child Images & RawImages to destroy
+		var toDestroy = new System.Collections.Generic.List<GameObject>();
+		foreach (var img in GetComponentsInChildren<Image>(true))
+		{
+			if (img == null || img.gameObject == gameObject) continue;
+			if (img.GetComponent<Button>() != null) continue;
+			if (img.gameObject.name == "BgHomeScreen") continue;
+			toDestroy.Add(img.gameObject);
+		}
+		foreach (var ri in GetComponentsInChildren<RawImage>(true))
+		{
+			if (ri == null || ri.gameObject == gameObject) continue;
+			if (ri.GetComponent<Button>() != null) continue;
+			if (ri.gameObject.name == "BgHomeScreen") continue;
+			if (!toDestroy.Contains(ri.gameObject)) toDestroy.Add(ri.gameObject);
+		}
+		foreach (GameObject go in toDestroy)
+			GameObject.DestroyImmediate(go);
+
+		// Create fresh background as very first child
 		GameObject bgObj = new GameObject("BgHomeScreen");
 		bgObj.transform.SetParent(transform, false);
 		bgObj.transform.SetAsFirstSibling();
@@ -784,6 +792,6 @@ public class MenuManager : MonoBehaviour
 		bgRt.anchorMax = Vector2.one;
 		bgRt.offsetMin = Vector2.zero;
 		bgRt.offsetMax = Vector2.zero;
-		Debug.Log("[BG] Created new BgHomeScreen");
+		Debug.Log("[BG] Done");
 	}
 }
