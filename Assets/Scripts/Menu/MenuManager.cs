@@ -85,10 +85,12 @@ public class MenuManager : MonoBehaviour
 
 		if (Application.loadedLevelName == "MainScene")
 		{
+			SetHomeScreenBackground();
 			ApplyTinyPoppersTextReplacements();
 			RemoveTopTitleAndLyrics();
 			EnlargeTinyPoppersLogo();
 			EnsureCreditsButton();
+			StyleMainSceneButtons();
 		}
 
 		popupOpened = false;
@@ -707,4 +709,80 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+	void StyleMainSceneButtons()
+	{
+		Button[] buttons = Resources.FindObjectsOfTypeAll<Button>();
+		Color skyBlue = new Color(0f, 0.67f, 0.93f, 1f);
+		foreach (Button btn in buttons)
+		{
+			if (btn == null)
+				continue;
+
+			if (btn.gameObject.hideFlags != HideFlags.None)
+				continue;
+
+			Image img = btn.GetComponent<Image>();
+			Text txt = btn.GetComponentInChildren<Text>(true);
+
+			if (img != null)
+			{
+				img.color = skyBlue;
+
+				Outline btnOutline = btn.gameObject.GetComponent<Outline>();
+				if (btnOutline != null)
+					Destroy(btnOutline);
+			}
+
+			if (txt != null)
+			{
+				txt.color = Color.white;
+				txt.fontStyle = FontStyle.Bold;
+
+				Outline txtOutline = txt.gameObject.GetComponent<Outline>();
+				if (txtOutline != null)
+					Destroy(txtOutline);
+			}
+		}
+	}
+
+	void SetHomeScreenBackground()
+	{
+		// Remove all existing opaque background-like images on Canvas children
+		Image[] allImages = GetComponentsInChildren<Image>(true);
+		foreach (Image img in allImages)
+		{
+			if (img.gameObject.name == "BgHomeScreen")
+				continue;
+			if (img.GetComponent<Button>() != null)
+				continue;
+			if (img.canvas != null && img.canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+			{
+				img.color = Color.clear;
+				img.sprite = null;
+			}
+		}
+
+		GameObject bgObj = new GameObject("BgHomeScreen");
+		bgObj.transform.SetParent(transform, false);
+		bgObj.transform.SetAsFirstSibling();
+
+		Image bgImage = bgObj.AddComponent<Image>();
+		Texture2D tex = Resources.Load<Texture2D>("BgHomeScreen");
+		if (tex != null)
+		{
+			bgImage.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+			Debug.Log("BgHomeScreen loaded: " + tex.width + "x" + tex.height);
+		}
+		else
+		{
+			bgImage.color = new Color(0f, 0.67f, 0.93f, 1f);
+			Debug.LogWarning("BgHomeScreen texture not found in Resources!");
+		}
+
+		RectTransform rt = bgObj.GetComponent<RectTransform>();
+		rt.anchorMin = Vector2.zero;
+		rt.anchorMax = Vector2.one;
+		rt.offsetMin = Vector2.zero;
+		rt.offsetMax = Vector2.zero;
+	}
 }

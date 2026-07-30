@@ -8,7 +8,7 @@ public class DashboardSceneBuilder : MonoBehaviour
 	Color backgroundColorB = new Color(0.25f, 0.12f, 0.32f, 1f); // Dark violet
 	Color panelColor = new Color(0.98f, 0.98f, 0.94f, 1f);
 	Color accentColor = new Color(0.06f, 0.58f, 0.75f, 1f);
-	Color buttonColor = new Color(1f, 0.74f, 0.21f, 1f);
+	Color buttonColor = new Color(0f, 0.67f, 0.93f, 1f);
 
 	Text titleTextComponent;
 	Text missionText;
@@ -144,46 +144,43 @@ public class DashboardSceneBuilder : MonoBehaviour
 		dashboardHighScoreTextPreview = CreateText(previewCard.transform, "DashboardHighScoreTextPreview", "High Score: 0", 24, new Color(0.85f, 0.4f, 1f, 1f), TextAnchor.MiddleLeft);
 
 		// 4. Big Start / Play Button
-		Button playButton = CreateButton(canvasObject.transform, "PlayButton", "START GAME", buttonColor);
+		Button playButton = CreateButton(canvasObject.transform, "PlayButton", "START GAME", new Color(0f, 0.67f, 0.93f, 1f));
 		playButtonRect = playButton.GetComponent<RectTransform>();
 		Text playBtnText = playButton.GetComponentInChildren<Text>();
 		playBtnText.fontSize = 32;
 		playBtnText.fontStyle = FontStyle.Bold;
 		playBtnText.color = Color.white;
-		Outline playBtnOutline = playButton.gameObject.AddComponent<Outline>();
-		playBtnOutline.effectColor = new Color(0f, 0f, 0f, 0.4f);
-		playBtnOutline.effectDistance = new Vector2(2f, -2f);
 		playButton.onClick.AddListener(StartLevel);
 
 		// 5. Grid of 4 beautiful pop-up buttons
-		Button dailyTargetBtn = CreateButton(canvasObject.transform, "DailyTargetBtn", "Daily Target", accentColor);
+		Button dailyTargetBtn = CreateButton(canvasObject.transform, "DailyTargetBtn", "Daily Target", new Color(0f, 0.67f, 0.93f, 1f));
 		dailyTargetBtnRect = dailyTargetBtn.GetComponent<RectTransform>();
 		SetBtnStyle(dailyTargetBtn, Color.white, 24);
 		dailyTargetBtn.onClick.AddListener(delegate { OpenPopup(dailyTargetPopup); });
 
-		Button toyCollectedBtn = CreateButton(canvasObject.transform, "ToyCollectedBtn", "Toy Collected", accentColor);
+		Button toyCollectedBtn = CreateButton(canvasObject.transform, "ToyCollectedBtn", "Toy Collected", new Color(0f, 0.67f, 0.93f, 1f));
 		toyCollectedBtnRect = toyCollectedBtn.GetComponent<RectTransform>();
 		SetBtnStyle(toyCollectedBtn, Color.white, 24);
 		toyCollectedBtn.onClick.AddListener(delegate { OpenPopup(toyCollectedPopup); });
 
-		Button progressMapBtn = CreateButton(canvasObject.transform, "ProgressMapBtn", "Progress Map", accentColor);
+		Button progressMapBtn = CreateButton(canvasObject.transform, "ProgressMapBtn", "Progress Map", new Color(0f, 0.67f, 0.93f, 1f));
 		progressMapBtnRect = progressMapBtn.GetComponent<RectTransform>();
 		SetBtnStyle(progressMapBtn, Color.white, 24);
 		progressMapBtn.onClick.AddListener(delegate { OpenPopup(progressMapPopup); });
 
-		Button achievementsBtn = CreateButton(canvasObject.transform, "AchievementsBtn", "Awards & Achievements", new Color(0.85f, 0.35f, 0.55f, 1f));
+		Button achievementsBtn = CreateButton(canvasObject.transform, "AchievementsBtn", "Awards & Achievements", new Color(0f, 0.67f, 0.93f, 1f));
 		achievementsBtnRect = achievementsBtn.GetComponent<RectTransform>();
 		SetBtnStyle(achievementsBtn, Color.white, 22);
 		achievementsBtn.onClick.AddListener(delegate { OpenPopup(achievementsPopup); RefreshAchievementsPopup(); });
 
 		// 7. Home / Back Button
-		Button homeButton = CreateButton(canvasObject.transform, "HomeButton", "Main Menu", new Color(0.9f, 0.93f, 0.95f, 1f));
+		Button homeButton = CreateButton(canvasObject.transform, "HomeButton", "Main Menu", new Color(0f, 0.67f, 0.93f, 1f));
 		homeButtonRect = homeButton.GetComponent<RectTransform>();
-		SetBtnStyle(homeButton, new Color(0.2f, 0.2f, 0.25f, 1f), 22);
+		SetBtnStyle(homeButton, Color.white, 22);
 		homeButton.onClick.AddListener(GoHome);
 
 		// Reset Progress Button
-		Button resetProgressBtn = CreateButton(canvasObject.transform, "ResetProgressBtn", "Reset Progress", new Color(0.85f, 0.25f, 0.25f, 1f));
+		Button resetProgressBtn = CreateButton(canvasObject.transform, "ResetProgressBtn", "Reset Progress", new Color(0f, 0.67f, 0.93f, 1f));
 		resetProgressBtnRect = resetProgressBtn.GetComponent<RectTransform>();
 		SetBtnStyle(resetProgressBtn, Color.white, 20);
 		resetProgressBtn.onClick.AddListener(ResetProgress);
@@ -266,12 +263,17 @@ public class DashboardSceneBuilder : MonoBehaviour
 	void SetBtnStyle(Button btn, Color textColor, int fontSize)
 	{
 		Text t = btn.GetComponentInChildren<Text>();
-		t.color = textColor;
-		t.fontSize = fontSize;
-		t.fontStyle = FontStyle.Bold;
-		Outline o = btn.gameObject.AddComponent<Outline>();
-		o.effectColor = new Color(0f, 0f, 0f, 0.25f);
-		o.effectDistance = new Vector2(1.5f, -1.5f);
+		if (t != null)
+		{
+			t.color = textColor;
+			t.fontSize = fontSize;
+			t.fontStyle = FontStyle.Bold;
+			Outline to = t.gameObject.GetComponent<Outline>();
+			if (to != null) Destroy(to);
+		}
+
+		Outline o = btn.gameObject.GetComponent<Outline>();
+		if (o != null) Destroy(o);
 	}
 
 	void BuildPopups(Transform parent)
@@ -316,7 +318,7 @@ public class DashboardSceneBuilder : MonoBehaviour
 		CreateProgressionButtons(progressPanel.transform);
 
 		// View Gallery button in Toy Collected popup
-		Button viewGalleryBtn = CreateButton(toyPanel.transform, "ViewGalleryBtn", "VIEW ALBUM", new Color(0.3f, 0.7f, 0.9f, 1f));
+		Button viewGalleryBtn = CreateButton(toyPanel.transform, "ViewGalleryBtn", "VIEW ALBUM", new Color(0f, 0.67f, 0.93f, 1f));
 		SetBtnStyle(viewGalleryBtn, Color.white, 20);
 		SetRect(viewGalleryBtn.GetComponent<RectTransform>(), new Vector2(0.5f, 0.15f), new Vector2(0.5f, 0.15f), Vector2.zero, new Vector2(260f, 56f));
 		viewGalleryBtn.onClick.AddListener(delegate {
@@ -366,7 +368,7 @@ public class DashboardSceneBuilder : MonoBehaviour
 		dailyRewardText = CreateText(achPanel.transform, "DailyRewardText", "Reward: 100 coins", 18, new Color(0.15f, 0.15f, 0.15f, 1f), TextAnchor.MiddleCenter);
 		SetRect(dailyRewardText.rectTransform, new Vector2(0.5f, 0.73f), new Vector2(0.5f, 0.73f), Vector2.zero, new Vector2(460f, 35f));
 
-		dailyClaimBtn = CreateButton(achPanel.transform, "DailyClaimBtn", "CLAIM", new Color(0.2f, 0.8f, 0.3f, 1f));
+		dailyClaimBtn = CreateButton(achPanel.transform, "DailyClaimBtn", "CLAIM", new Color(0f, 0.67f, 0.93f, 1f));
 		SetRect(dailyClaimBtn.GetComponent<RectTransform>(), new Vector2(0.5f, 0.63f), new Vector2(0.5f, 0.63f), Vector2.zero, new Vector2(200f, 45f));
 		SetBtnStyle(dailyClaimBtn, Color.white, 20);
 		dailyClaimBtn.onClick.AddListener(ClaimDailyRewardFromPopup);
@@ -411,7 +413,7 @@ public class DashboardSceneBuilder : MonoBehaviour
 		windowDummyBtn.transition = Selectable.Transition.None;
 
 		// Close Button at bottom of window
-		Button closeBtn = CreateButton(window.transform, "CloseButton", "CLOSE", new Color(0.9f, 0.35f, 0.35f, 1f));
+		Button closeBtn = CreateButton(window.transform, "CloseButton", "CLOSE", new Color(0f, 0.67f, 0.93f, 1f));
 		SetBtnStyle(closeBtn, Color.white, 22);
 		SetRect(closeBtn.GetComponent<RectTransform>(), new Vector2(0.5f, 0.12f), new Vector2(0.5f, 0.12f), Vector2.zero, new Vector2(240f, 64f));
 		closeBtn.onClick.AddListener(delegate {
@@ -435,7 +437,7 @@ public class DashboardSceneBuilder : MonoBehaviour
 	void CreateThemeButtons(Transform parent)
 	{
 		string[] names = new string[] { "Classic", "Ocean", "Candy" };
-		Color[] colors = new Color[] { accentColor, new Color(0.12f, 0.45f, 0.95f, 1f), new Color(0.95f, 0.25f, 0.58f, 1f) };
+		Color[] colors = new Color[] { new Color(0f, 0.67f, 0.93f, 1f), new Color(0f, 0.67f, 0.93f, 1f), new Color(0f, 0.67f, 0.93f, 1f) };
 
 		for (int i = 0; i < names.Length; i++)
 		{
@@ -666,8 +668,14 @@ public class DashboardSceneBuilder : MonoBehaviour
 	{
 		GameObject go = CreatePanel(parent, name, color);
 		Button button = go.AddComponent<Button>();
-		Text text = CreateText(go.transform, "Text", label, 22, Color.black, TextAnchor.MiddleCenter);
+		Text text = CreateText(go.transform, "Text", label, 22, Color.white, TextAnchor.MiddleCenter);
 		SetFullStretch(text.rectTransform);
+
+		Outline to = text.gameObject.GetComponent<Outline>();
+		if (to != null) Destroy(to);
+		Outline bo = go.GetComponent<Outline>();
+		if (bo != null) Destroy(bo);
+
 		return button;
 	}
 
@@ -736,7 +744,7 @@ public class DashboardSceneBuilder : MonoBehaviour
 			Text nameText = CreateText(row.transform, "NameText", item.itemName + " (" + item.price + " coins)", 18, new Color(0.15f, 0.15f, 0.15f, 1f), TextAnchor.MiddleLeft);
 			SetRect(nameText.rectTransform, new Vector2(0f, 0.5f), new Vector2(0.7f, 0.5f), new Vector2(12f, 0f), new Vector2(300f, 40f));
 
-			Button buyBtn = CreateButton(row.transform, "BuyBtn", "BUY", new Color(0.2f, 0.8f, 0.3f, 1f));
+			Button buyBtn = CreateButton(row.transform, "BuyBtn", "BUY", new Color(0f, 0.67f, 0.93f, 1f));
 			SetRect(buyBtn.GetComponent<RectTransform>(), new Vector2(0.85f, 0.5f), new Vector2(0.85f, 0.5f), Vector2.zero, new Vector2(80f, 44f));
 			SetBtnStyle(buyBtn, Color.white, 16);
 			buyBtn.onClick.AddListener(delegate {
@@ -784,7 +792,7 @@ public class DashboardSceneBuilder : MonoBehaviour
 			{
 				dailyClaimBtn.interactable = true;
 				dailyClaimBtn.GetComponentInChildren<Text>().text = "CLAIM";
-				dailyClaimBtn.GetComponent<Image>().color = new Color(0.2f, 0.8f, 0.3f, 1f);
+				dailyClaimBtn.GetComponent<Image>().color = new Color(0f, 0.67f, 0.93f, 1f);
 			}
 		}
 

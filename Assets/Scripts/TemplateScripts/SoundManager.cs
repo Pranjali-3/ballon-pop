@@ -125,8 +125,8 @@ public class SoundManager : MonoBehaviour {
 		TryLoadAudioSource(ref plusSec, "PlusSec1");
 		TryLoadAudioSource(ref baloonPop, "BaloonPop");
 		TryLoadAudioSource(ref toyPop, "ToyPop");
-		TryLoadAudioSource(ref menuMusic, "TheCircusBee", true);
-		TryLoadAudioSource(ref gameplayMusic, "TheCircusBee", true);
+		TryLoadAudioSource(ref menuMusic, "Tiny_Poppers", true);
+		TryLoadAudioSource(ref gameplayMusic, "Tiny_Poppers", true);
 		TryLoadAudioSource(ref bossMusic, "BossMusic", true);
 		TryLoadAudioSource(ref comboMusic, "ComboBells", true);
 		TryLoadAudioSource(ref victoryMusic, "VictoryMusic", true);
