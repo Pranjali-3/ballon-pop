@@ -35,6 +35,8 @@ public class MenuManager : MonoBehaviour
 	
 	void Start () 
 	{
+		Debug.Log("[START] MenuManager Start called on scene: " + Application.loadedLevelName);
+
 		if(Application.loadedLevelName=="MainScene")
 		{
 			crossPromotionInterstitial = GameObject.Find("PopUps/PopUpInterstitial");
@@ -50,7 +52,12 @@ public class MenuManager : MonoBehaviour
 		}
 		
 		if(Application.loadedLevelName != "MapScene")
-			ShowMenu(currentMenu.gameObject);	
+		{
+			if (currentMenu != null)
+				ShowMenu(currentMenu.gameObject);
+			else
+				Debug.LogWarning("[START] currentMenu is null!");
+		}
 		
 		if(Application.loadedLevelName=="MainScene")
 		{
